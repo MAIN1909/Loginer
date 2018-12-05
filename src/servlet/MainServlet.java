@@ -16,6 +16,7 @@ public class MainServlet extends HttpServlet {
             response.setCharacterEncoding("UTF-8");
             try {
                 PrintWriter out = response.getWriter();
+                //хранить картинки на piccy.info
                 out.println("Hello world!!! привет мир");
                 out.close();
             } catch (Exception e) {
