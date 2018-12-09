@@ -1,5 +1,7 @@
 package servlet;
 
+import Servise.HtmlServise;
+
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
@@ -17,7 +19,7 @@ public class MainServlet extends HttpServlet {
             try {
                 PrintWriter out = response.getWriter();
                 //хранить картинки на piccy.info
-                out.println("Hello world!!! привет мир");
+                out.println(HtmlServise.formMainPage("Главная"));
                 out.close();
             } catch (Exception e) {
                 e.printStackTrace();
