@@ -1,4 +1,4 @@
-package Servise;
+package servise;
 
 public class HtmlServise {
 

@@ -1,6 +1,6 @@
 package servlet;
 
-import Servise.HtmlServise;
+import servise.HtmlServise;
 
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
