@@ -4,3 +4,10 @@
 4)+++Create FileSystemItemDao, use it (reznik)
 5)Create ItemServlet witch will show single item (with id incoming param)
 6)Improve click on item in main page
+7)Create table 'item' in database
+8)Write DatabaseItemDao witch will gets all items from DB
+9)Improve searching by name or part of name
+10)Improve user registration and login process
+11)Reorganize project to use SpringContext
+12)Migrate project to Spring MVC technology
+13)Reorganize project to work with Spring annotations
