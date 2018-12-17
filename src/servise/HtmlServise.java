@@ -36,7 +36,7 @@ public class HtmlServise {
         String code = "<h1 align = 'center'>Продам Обои</h1>\n";
         for (Item i : items) {
             code += "<div align = 'right'>" +
-                    "<img src='" + i.getPic() + "'<br/>\n" +
+                    "<img src='" + i.getPic() + "'/><br/>\n" +
                     "<p><big><big><big>" + i.getName() + "</big></big></big></p>\n" +
                     "<h3>" + i.getDescription() + "</h3>\n" +
                     "Price: " + i.getPrice() + "\n" +
