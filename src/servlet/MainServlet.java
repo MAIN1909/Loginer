@@ -1,5 +1,7 @@
 package servlet;
 
+import entity.Item;
+import item.ItemsHolder;
 import servise.HtmlServise;
 
 import javax.servlet.annotation.WebServlet;
@@ -8,6 +10,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.util.Collection;
 
 @WebServlet(name = "MainServlet", urlPatterns = "/main")
 public class MainServlet extends HttpServlet {
@@ -19,7 +22,8 @@ public class MainServlet extends HttpServlet {
             try {
                 PrintWriter out = response.getWriter();
                 //хранить картинки на piccy.info
-                out.println(HtmlServise.formMainPage("Главная"));
+                Collection<Item> itemsCollection = ItemsHolder.items.values();
+                out.println(HtmlServise.formMainPage("Главная", itemsCollection));
                 out.close();
             } catch (Exception e) {
                 e.printStackTrace();
