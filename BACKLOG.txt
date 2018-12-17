@@ -1,5 +1,5 @@
 1)+++Create Item class (reznik)
-2)Create list of items in static field
+2)+++Create list of items in static field (reznik)
 3)Show items on main page
 
 4)Create ItemServlet witch will show single item (with id incoming param)
