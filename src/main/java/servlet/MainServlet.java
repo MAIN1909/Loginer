@@ -2,7 +2,7 @@ package servlet;
 
 import entity.Item;
 import item.ItemsHolder;
-import servise.HtmlServise;
+import service.HtmlServise;
 
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;

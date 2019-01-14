@@ -1,6 +1,6 @@
 package item;
 
-import dao.FileSystemItemDao;
+import dao.MySqlItemDao;
 import entity.Item;
 
 import java.util.Map;
@@ -12,7 +12,7 @@ public class ItemsHolder {
 
     static {
         items = new ConcurrentHashMap<>();
-        for (Item i : new FileSystemItemDao().get()) {
+        for (Item i : new MySqlItemDao().get()) {
             items.put(i.getId(), i);
         }
 //        Item i1 = new Item(UUID.randomUUID(), "Freege", "Siemens big freege", 15000, "http://i.piccy.info/i9/6a402bdc033cc60d9d418abbdf3f1cb0/1544399078/161873/1287748/bmw.jpg");

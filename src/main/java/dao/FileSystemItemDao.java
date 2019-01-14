@@ -14,11 +14,11 @@ public class FileSystemItemDao implements ItemDao {
 
     @Override
     public List<Item> get() {
-        File id = new File("C:\\Users\\USER\\IdeaProjects\\Loginer2\\id.dat");
-        File name = new File("C:\\Users\\USER\\IdeaProjects\\Loginer2\\name.dat");
-        File desc = new File("C:\\Users\\USER\\IdeaProjects\\Loginer2\\description.dat");
-        File pic = new File("C:\\Users\\USER\\IdeaProjects\\Loginer2\\pic.dat");
-        File price = new File("C:\\Users\\USER\\IdeaProjects\\Loginer2\\price.dat");
+        File id = new File("C:\\Users\\ADMIN\\IdeaProjects\\Loginer\\id.dat");
+        File name = new File("C:\\Users\\ADMIN\\IdeaProjects\\Loginer\\name.dat");
+        File desc = new File("C:\\Users\\ADMIN\\IdeaProjects\\Loginer\\description.dat");
+        File pic = new File("C:\\Users\\ADMIN\\IdeaProjects\\Loginer\\pic.dat");
+        File price = new File("C:\\Users\\ADMIN\\IdeaProjects\\Loginer\\price.dat");
         List<Item> out = new LinkedList<>();
 
         try (BufferedReader brId = new BufferedReader(new FileReader(id));
