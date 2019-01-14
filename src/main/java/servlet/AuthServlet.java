@@ -1,5 +1,6 @@
 package servlet;
 
+import hibernate.HibernateUtil;
 import service.HtmlServise;
 
 import javax.servlet.annotation.WebServlet;
@@ -22,6 +23,7 @@ public class AuthServlet extends HttpServlet {
     }
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) {
+        new HibernateUtil();
         response.setContentType("text/html");
         response.setCharacterEncoding("UTF-8");
         try {
