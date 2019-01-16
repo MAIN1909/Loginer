@@ -1,9 +1,18 @@
 package entity;
 
+import org.hibernate.annotations.Type;
+
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.Table;
 import java.util.Objects;
 import java.util.UUID;
 
+@Entity
+@Table(name = "loginer_item")
 public class Item {
+    @Id
+    @Type(type = "uuid-char")
     private UUID id;
     private String name;
     private String description;

@@ -1,6 +1,7 @@
 package item;
 
 import dao.FileSystemItemDao;
+import dao.HibernateMySqlItemDao;
 import dao.MySqlItemDao;
 import entity.Item;
 
@@ -13,9 +14,12 @@ public class ItemsHolder {
 
     static {
         items = new ConcurrentHashMap<>();
-        for (Item i : new MySqlItemDao().get()) {
+//        Для доступа из MySql
+//        for (Item i : new MySqlItemDao().get()) {
 //            Для доступа из файлов
 //        for (Item i : new FileSystemItemDao().get()) {
+//            Для доступа из Hibernate
+        for (Item i : new HibernateMySqlItemDao().get()) {
             items.put(i.getId(), i);
         }
     }

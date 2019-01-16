@@ -56,7 +56,7 @@ public class HtmlServise {
         sb.append(formHead(title));
         sb.append("<h1 align = 'center'>Страница с выбраным товаром</h1>\n");
         sb.append("<div align = 'left'>");
-        sb.append("<img width=\"50%\" src='" + item.getPic() + "'/><br/>\n");
+        sb.append("<img width=\"60%\" src='" + item.getPic() + "'/><br/>\n");
         sb.append("<p style=\"font-size:28px\">" + item.getName() + "</p>\n");
         sb.append("<h2>" + item.getDescription() + "</h2>\n");
         sb.append("<h3> Price: " + item.getPrice() + "<br/>\n");

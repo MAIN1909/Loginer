@@ -1,5 +1,6 @@
 package servlet;
 
+import dao.HibernateMySqlItemDao;
 import dao.MySqlItemDao;
 import entity.Item;
 import service.HtmlServise;
@@ -23,8 +24,11 @@ public class ItemServlet extends HttpServlet {
         response.setContentType("text/html");
         response.setCharacterEncoding("UTF-8");
         String id = request.getParameter("id");
+//Для MySql
+//        Item itemById = new MySqlItemDao().getById(id);
+//Для Hibernate
+        Item itemById = new HibernateMySqlItemDao().getById(id);
 
-        Item itemById = new MySqlItemDao().getById(id);
         PrintWriter out = response.getWriter();
         out.println(HtmlServise.formItemPage("Товар", itemById));
         out.close();
