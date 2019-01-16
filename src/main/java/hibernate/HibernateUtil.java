@@ -7,8 +7,6 @@ import org.hibernate.service.ServiceRegistry;
 
 public class HibernateUtil {
     private static final SessionFactory sessionFactory;
-
-    //    private static SessionFactory buildSessionFactory() {
     static {
         // Create the SessionFactory from hibernate.cfg.xml
         Configuration configuration = new Configuration();
@@ -19,6 +17,5 @@ public class HibernateUtil {
 
     public static SessionFactory getSessionFactory() {
         return sessionFactory;
-//        }
     }
 }

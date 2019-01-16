@@ -1,7 +1,7 @@
 package entity;
 
 import org.hibernate.annotations.Type;
-
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.Table;
@@ -13,6 +13,7 @@ import java.util.UUID;
 public class Item {
     @Id
     @Type(type = "uuid-char")
+    @Column(name = "id")
     private UUID id;
     private String name;
     private String description;

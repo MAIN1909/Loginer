@@ -10,7 +10,6 @@ public class HibernateMySqlItemDao implements ItemDao {
     @Override
     public List<Item> get() {
         Session s = HibernateUtil.getSessionFactory().openSession();
-//        List<Item> out = s.createCriteria(Item.class).list();
         List<Item> out = s.createQuery("FROM Item").list();
         s.close();
         return out;
@@ -23,4 +22,13 @@ public class HibernateMySqlItemDao implements ItemDao {
         s.close();
         return out;
     }
+
+    public void save(Item i) {
+        Session s = HibernateUtil.getSessionFactory().openSession();
+        s.beginTransaction();
+        s.save(i);
+        s.getTransaction().commit();
+        s.close();
+    }
+
 }
