@@ -28,22 +28,7 @@ public class AuthServlet extends HttpServlet {
         response.setCharacterEncoding("UTF-8");
         try {
             PrintWriter out = response.getWriter();
-            out.println(
-                    HtmlServise.formAuthPage("Логинер")
-//                    "<html>\n" +
-//                    "  <head>\n" +
-//                    "    <title></title>\n" +
-//                    "  </head>\n" +
-//                    "  <body>\n" +
-//                    "    <div>\n" +
-//                    "      <form action='/loginer/' method='POST'>\n" +
-//                    "        <input type='text' name='login'/>\n" +
-//                    "        <input type='submit' value='Sign In Me'/> \n" +
-//                    "      </form>\n" +
-//                    "    </div>\n" +
-//                    "  </body>\n" +
-//                    "</html>"
-            );
+            out.println(HtmlServise.formAuthPage("Логинер"));
             out.close();
         } catch (Exception e) {
             e.printStackTrace();

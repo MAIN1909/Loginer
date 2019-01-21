@@ -48,7 +48,29 @@ public class MySqlItemDao implements ItemDao {
         } catch (SQLException e) {
             e.printStackTrace();
         }
-        System.out.println("=============" + out.size());
+        return out;
+    }
+
+    @Override
+    public Item getById(String id) {
+        Item out = null;
+        Connection c = getConnection();
+        try {
+            Statement st = c.createStatement();
+            ResultSet rs = st.executeQuery("SELECT * FROM loginer_item WHERE id='" + id + "'");
+
+            System.out.println(rs.next());
+            out = new Item(UUID.fromString(rs.getString("id")),
+                    rs.getString("name"),
+                    rs.getString("description"),
+                    rs.getInt("price"),
+                    rs.getString("pic"));
+
+            st.close();
+            c.close();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
         return out;
     }
 }

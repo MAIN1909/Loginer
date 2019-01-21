@@ -10,7 +10,15 @@ public class HibernateMySqlItemDao implements ItemDao {
     @Override
     public List<Item> get() {
         Session s = HibernateUtil.getSessionFactory().openSession();
-        List<Item> out = s.createCriteria(Item.class).list();
+        List<Item> out = s.createQuery("FROM Item").list();
+        s.close();
+        return out;
+    }
+
+    @Override
+    public Item getById(String id) {
+        Session s = HibernateUtil.getSessionFactory().openSession();
+        Item out = (Item) s.createQuery("FROM Item WHERE id='" + id + "'").uniqueResult();
         s.close();
         return out;
     }
@@ -23,6 +31,4 @@ public class HibernateMySqlItemDao implements ItemDao {
         s.close();
     }
 
-    // HQL query for getById(String id) is "FROM Item WHERE id='"+id+"'"
-    // with 'uniqueResult()' method usage
 }
