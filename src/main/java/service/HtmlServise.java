@@ -6,22 +6,24 @@ import java.util.Collection;
 
 public class HtmlServise {
 
-    private static String formHead(String title) {
+    private String formHead(String title) {
         StringBuilder sb = new StringBuilder();
         sb.append("<html>\n");
         sb.append("  <head>\n");
-        sb.append("    <title>" + title + "</title>\n");
+        sb.append("    <title>")
+                .append(title)
+                .append("</title>\n");
         sb.append("  </head>\n");
         sb.append("  <body style='background:url(http://i.piccy.info/i9/a0cd8340a4c2e5f8a59d25f90bb7887a/1544398933/376884/1287748/fone.jpg)'>\n");
         return sb.toString();
     }
 
-    private static String formTale() {
+    private String formTale() {
         return "</body>\n" +
                 "</html>";
     }
 
-    public static String formAuthPage(String title) {
+    public String formAuthPage(String title) {
         StringBuilder sb = new StringBuilder();
         sb.append(formHead(title));
         sb.append("<div>\n");
@@ -34,13 +36,17 @@ public class HtmlServise {
         return sb.toString();
     }
 
-    public static String formMainPage(String title, Collection<Item> items) {
+    public String formMainPage(String title, Collection<Item> items) {
         StringBuilder sb = new StringBuilder();
         sb.append(formHead(title));
         sb.append("<h1 align = 'center'>Продам Обои</h1>\n");
         for (Item i : items) {
             sb.append("<div align = 'right'>");
-            sb.append("<a href=/loginer/item?id=" + i.getId() + "><img src='" + i.getPic() + "'/></a><br/>\n");
+            sb.append("<a href=/loginer/item?id=")
+                    .append(i.getId())
+                    .append("><img src='")
+                    .append(i.getPic())
+                    .append("'/></a><br/>\n");
             sb.append("<p><big><big><big>" + i.getName() + "</big></big></big></p>\n");
             sb.append("<h3>" + i.getDescription() + "</h3>\n");
             sb.append("Price: " + i.getPrice() + "\n");
@@ -51,7 +57,7 @@ public class HtmlServise {
         return sb.toString();
     }
 
-    public static String formItemPage(String title, Item item) {
+    public String formItemPage(String title, Item item) {
         StringBuilder sb = new StringBuilder();
         sb.append(formHead(title));
         sb.append("<h1 align = 'center'>Страница с выбраным товаром</h1>\n");

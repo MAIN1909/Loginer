@@ -3,6 +3,7 @@ package servlet;
 import entity.Item;
 import item.ItemsHolder;
 import service.HtmlServise;
+import spring.SpringContextHolder;
 
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -23,7 +24,7 @@ public class MainServlet extends HttpServlet {
                 PrintWriter out = response.getWriter();
                 //хранить картинки на piccy.info
                 Collection<Item> itemsCollection = ItemsHolder.items.values();
-                out.println(HtmlServise.formMainPage("Главная", itemsCollection));
+                out.println(((HtmlServise) SpringContextHolder.getContext().getBean("html")).formMainPage("Главная", itemsCollection));
                 out.close();
             } catch (Exception e) {
                 e.printStackTrace();

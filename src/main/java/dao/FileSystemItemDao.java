@@ -1,6 +1,7 @@
 package dao;
 
 import entity.Item;
+import spring.SpringContextHolder;
 
 import java.io.BufferedReader;
 import java.io.File;
@@ -13,11 +14,11 @@ import java.util.UUID;
 public class FileSystemItemDao implements ItemDao {
     @Override
     public List<Item> get() {
-        File idf = new File("E:\\IdeaProjects\\GitHub\\Loginer\\id.dat");
-        File name = new File("E:\\IdeaProjects\\GitHub\\Loginer\\name.dat");
-        File desc = new File("E:\\IdeaProjects\\GitHub\\Loginer\\description.dat");
-        File pic = new File("E:\\IdeaProjects\\GitHub\\Loginer\\pic.dat");
-        File price = new File("E:\\IdeaProjects\\GitHub\\Loginer\\price.dat");
+        File idf = (File) SpringContextHolder.getContext().getBean("id_file");
+        File name = (File) SpringContextHolder.getContext().getBean("name_file");
+        File desc = (File) SpringContextHolder.getContext().getBean("desc_file");
+        File pic = (File) SpringContextHolder.getContext().getBean("pic_file");
+        File price = (File) SpringContextHolder.getContext().getBean("price_file");
         List<Item> out = new LinkedList<>();
 
         try (BufferedReader brId = new BufferedReader(new FileReader(idf));
@@ -41,11 +42,11 @@ public class FileSystemItemDao implements ItemDao {
 
     @Override
     public Item getById(String id) {
-        File idf = new File("E:\\IdeaProjects\\GitHub\\Loginer\\id.dat");
-        File name = new File("E:\\IdeaProjects\\GitHub\\Loginer\\name.dat");
-        File desc = new File("E:\\IdeaProjects\\GitHub\\Loginer\\description.dat");
-        File pic = new File("E:\\IdeaProjects\\GitHub\\Loginer\\pic.dat");
-        File price = new File("E:\\IdeaProjects\\GitHub\\Loginer\\price.dat");
+        File idf = (File) SpringContextHolder.getContext().getBean("id_file");
+        File name = (File) SpringContextHolder.getContext().getBean("name_file");
+        File desc = (File) SpringContextHolder.getContext().getBean("desc_file");
+        File pic = (File) SpringContextHolder.getContext().getBean("pic_file");
+        File price = (File) SpringContextHolder.getContext().getBean("price_file");
 
         try (BufferedReader brId = new BufferedReader(new FileReader(idf));
              BufferedReader brName = new BufferedReader(new FileReader(name));

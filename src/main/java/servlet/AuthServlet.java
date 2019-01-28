@@ -1,7 +1,7 @@
 package servlet;
 
-import hibernate.HibernateUtil;
 import service.HtmlServise;
+import spring.SpringContextHolder;
 
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -23,12 +23,11 @@ public class AuthServlet extends HttpServlet {
     }
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) {
-        new HibernateUtil();
         response.setContentType("text/html");
         response.setCharacterEncoding("UTF-8");
         try {
             PrintWriter out = response.getWriter();
-            out.println(HtmlServise.formAuthPage("Логинер"));
+            out.println(((HtmlServise) SpringContextHolder.getContext().getBean("html")).formAuthPage("Логинер"));
             out.close();
         } catch (Exception e) {
             e.printStackTrace();
