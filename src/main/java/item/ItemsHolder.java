@@ -1,9 +1,8 @@
 package item;
 
-import dao.FileSystemItemDao;
-import dao.HibernateMySqlItemDao;
-import dao.MySqlItemDao;
+import dao.ItemDao;
 import entity.Item;
+import spring.SpringContextHolder;
 
 import java.util.Map;
 import java.util.UUID;
@@ -19,7 +18,7 @@ public class ItemsHolder {
 //            Для доступа из файлов
 //        for (Item i : new FileSystemItemDao().get()) {
 //            Для доступа из Hibernate
-        for (Item i : new HibernateMySqlItemDao().get()) {
+        for (Item i : ((ItemDao) SpringContextHolder.getContext().getBean("idao")).get()) {
             items.put(i.getId(), i);
         }
     }
