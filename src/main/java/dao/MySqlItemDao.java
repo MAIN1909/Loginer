@@ -73,4 +73,50 @@ public class MySqlItemDao implements ItemDao {
         }
         return out;
     }
+
+    @Override
+    public List<Item> getByName(String name) {
+        List<Item> out = new LinkedList<>();
+        Connection c = getConnection();
+        try {
+            Statement st = c.createStatement();
+            ResultSet rs = st.executeQuery("SELECT * FROM loginer_item WHERE name LIKE '%" + name + "%'");
+            while (rs.next()) {
+                out.add(new Item(UUID.fromString(rs.getString("id")),
+                        rs.getString("name"),
+                        rs.getString("description"),
+                        rs.getInt("price"),
+                        rs.getString("pic")));
+            }
+            st.close();
+            c.close();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return out;
+    }
+
+    @Override
+    public void save(Item i) {
+
+        Connection c = getConnection();
+
+        String query = " insert into loginer_item (id,name, description, price,pic)" + " values (?, ?, ?, ?, ?)";
+        PreparedStatement preparedStmt = null;
+        try {
+            preparedStmt = c.prepareStatement(query);
+            preparedStmt.setString(1, UUID.randomUUID().toString());
+            preparedStmt.setString(2, i.getName());
+            preparedStmt.setString(3, i.getDescription());
+            preparedStmt.setString(4, String.valueOf(Integer.parseInt(String.valueOf(i.getPrice()))));
+            preparedStmt.setString(5, i.getPic());
+            preparedStmt.execute();
+            c.close();
+        } catch (SQLException e1) {
+            e1.printStackTrace();
+
+        }
+
+
+    }
 }

@@ -8,4 +8,8 @@ public interface ItemDao {
     List<Item> get();
 
     Item getById(String id);
+
+    void save(Item item);
+
+    List<Item> getByName(String name);
 }

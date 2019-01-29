@@ -6,11 +6,11 @@ import java.util.Collection;
 
 public class HtmlServise {
 
-    private String formHead(String title) {
+    String formHead(String title) {
         StringBuilder sb = new StringBuilder();
         sb.append("<html>\n");
         sb.append("  <head>\n");
-        sb.append("    <title>")
+        sb.append("<title>")
                 .append(title)
                 .append("</title>\n");
         sb.append("  </head>\n");
@@ -18,7 +18,7 @@ public class HtmlServise {
         return sb.toString();
     }
 
-    private String formTale() {
+    String formTale() {
         return "</body>\n" +
                 "</html>";
     }
@@ -38,38 +38,26 @@ public class HtmlServise {
 
     public String formMainPage(String title, Collection<Item> items) {
         StringBuilder sb = new StringBuilder();
-        sb.append(formHead(title));
-        sb.append("<h1 align = 'center'>Продам Обои</h1>\n");
-        for (Item i : items) {
-            sb.append("<div align = 'right'>");
-            sb.append("<a href=/loginer/item?id=")
-                    .append(i.getId())
-                    .append("><img src='")
-                    .append(i.getPic())
-                    .append("'/></a><br/>\n");
-            sb.append("<p><big><big><big>" + i.getName() + "</big></big></big></p>\n");
-            sb.append("<h3>" + i.getDescription() + "</h3>\n");
-            sb.append("Price: " + i.getPrice() + "\n");
-            sb.append("id: " + i.getId() + "\n");
-            sb.append("</div>\n");
-        }
-        sb.append(formTale());
-        return sb.toString();
-    }
 
-    public String formItemPage(String title, Item item) {
-        StringBuilder sb = new StringBuilder();
-        sb.append(formHead(title));
-        sb.append("<h1 align = 'center'>Страница с выбраным товаром</h1>\n");
-        sb.append("<div align = 'left'>");
-        sb.append("<img width=\"60%\" src='" + item.getPic() + "'/><br/>\n");
-        sb.append("<p style=\"font-size:28px\">" + item.getName() + "</p>\n");
-        sb.append("<h2>" + item.getDescription() + "</h2>\n");
-        sb.append("<h3> Price: " + item.getPrice() + "<br/>\n");
-        sb.append("id: " + item.getId() + "</h3> \n");
-        sb.append("</div>\n");
-        sb.append(formTale());
-        return sb.toString();
+        String code = "<h1 align = 'center'></h1>";
+        String search = "<div><form action='/loginer/search'>" +
+                " <input type='text' name='name'/>" +
+                " <input type='submit' value='Search'/>" +
+                "  </form></div>";
+        String add = "<div><form action='/loginer/add'>" +
+                " <input type='submit' value='Create new item'/>" +
+                "  </form></div>";
+        for (Item i : items) {
+            code += "<div align = 'center'>" +
+                    "<a href ='/loginer/item?id=" + i.getId() + "'> <img src='" + i.getPic() + "'/></a><br/>\n" +
+                    "<p><big><big><big>" + i.getName() + "</big></big></big></p>\n" +
+                    "<h3>" + i.getDescription() + "</h3>\n" +
+                    "Price: " + i.getPrice() + "\n" +
+                    "id: " + i.getId() + "\n" +
+                    "</div>\n";
+        }
+        return sb.append(formHead(title)).append(search).append(add).append(code).append(formTale()).toString();
+
 
     }
 }

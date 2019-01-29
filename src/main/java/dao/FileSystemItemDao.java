@@ -67,4 +67,14 @@ public class FileSystemItemDao implements ItemDao {
         }
         return null;
     }
+
+    @Override
+    public void save(Item item) {
+
+    }
+
+    @Override
+    public List<Item> getByName(String name) {
+        return null;
+    }
 }

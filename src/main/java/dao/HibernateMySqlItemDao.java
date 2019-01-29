@@ -31,4 +31,13 @@ public class HibernateMySqlItemDao implements ItemDao {
         s.close();
     }
 
+    @Override
+    public List<Item> getByName(String name) {
+        Session s = HibernateUtil.getSessionFactory().openSession();
+        List<Item> out = s.createQuery("FROM Item WHERE name LIKE'%" + name + "%'").list();
+        s.close();
+        return out;
+    }
+
+
 }
