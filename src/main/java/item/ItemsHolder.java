@@ -9,7 +9,7 @@ import java.util.UUID;
 import java.util.concurrent.ConcurrentHashMap;
 
 public class ItemsHolder {
-    public static final Map<UUID, Item> items;
+    public static Map<UUID, Item> items;
 
     static {
         items = new ConcurrentHashMap<>();
@@ -21,5 +21,6 @@ public class ItemsHolder {
         for (Item i : ((ItemDao) SpringContextHolder.getContext().getBean("idao")).get()) {
             items.put(i.getId(), i);
         }
+
     }
 }
