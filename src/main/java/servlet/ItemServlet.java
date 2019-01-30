@@ -2,17 +2,16 @@ package servlet;
 
 import dao.ItemDao;
 import entity.Item;
-import service.HtmlServise;
+import service.ItemServise;
 import spring.SpringContextHolder;
 
-import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.io.PrintWriter;
 
-@WebServlet(name = "ItemServlet", urlPatterns = "/item")
+//@WebServlet(name = "ItemServlet", urlPatterns = "/item")
 public class ItemServlet extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response) {
 
@@ -28,7 +27,7 @@ public class ItemServlet extends HttpServlet {
         Item itemById = ((ItemDao) SpringContextHolder.getContext().getBean("idao")).getById(id);
 
         PrintWriter out = response.getWriter();
-        out.println(((HtmlServise) SpringContextHolder.getContext().getBean("html")).formItemPage("Товар", itemById));
+        out.println(((ItemServise) SpringContextHolder.getContext().getBean("html_item")).formItemPage(itemById));
         out.close();
 //        Item itemById = null;
 //        for (Item i : new MySqlItemDao().get()) {
