@@ -20,7 +20,7 @@
         <constructor-arg value="C:\Users\Lenovo\IdeaProjects\LoginerNew\price.dat"/>
     </bean>
 
-    <bean id="idao" class="dao.FileSystemItemDao"/>
+    <bean id="idao" class="dao.HibernateMySqlItemDao"/>
 
     <bean id="hib_util" class="hibernate.HibernateUtil"/>
 
