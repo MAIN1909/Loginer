@@ -21,6 +21,7 @@
     </bean>
 
     <bean id="idao" class="dao.HibernateMySqlItemDao"/>
+    <bean id="user_dao" class="dao.HibernateMySqlUserDao"/>
 
     <bean id="hib_util" class="hibernate.HibernateUtil"/>
 
