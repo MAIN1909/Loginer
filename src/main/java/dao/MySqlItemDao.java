@@ -1,6 +1,7 @@
 package dao;
 
 import entity.Item;
+import service.ItemServise;
 
 import java.sql.*;
 import java.util.LinkedList;
@@ -97,7 +98,7 @@ public class MySqlItemDao implements ItemDao {
     }
 
     @Override
-    public void save(Item i) {
+    public ItemServise save(Item i) {
 
         Connection c = getConnection();
 
@@ -111,6 +112,7 @@ public class MySqlItemDao implements ItemDao {
             preparedStmt.setString(4, String.valueOf(Integer.parseInt(String.valueOf(i.getPrice()))));
             preparedStmt.setString(5, i.getPic());
             preparedStmt.execute();
+            preparedStmt.close();
             c.close();
         } catch (SQLException e1) {
             e1.printStackTrace();
@@ -118,5 +120,6 @@ public class MySqlItemDao implements ItemDao {
         }
 
 
+        return null;
     }
 }

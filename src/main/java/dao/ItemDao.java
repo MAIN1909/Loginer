@@ -1,6 +1,7 @@
 package dao;
 
 import entity.Item;
+import service.ItemServise;
 
 import java.util.List;
 
@@ -9,7 +10,7 @@ public interface ItemDao {
 
     Item getById(String id);
 
-    void save(Item item);
+    ItemServise save(Item item);
 
     List<Item> getByName(String name);
 }

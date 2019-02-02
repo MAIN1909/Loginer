@@ -4,6 +4,7 @@ import entity.Item;
 import hibernate.HibernateUtil;
 import org.hibernate.Session;
 import org.springframework.stereotype.Component;
+import service.ItemServise;
 
 import java.util.List;
 
@@ -25,12 +26,13 @@ public class HibernateMySqlItemDao implements ItemDao {
         return out;
     }
 
-    public void save(Item i) {
+    public ItemServise save(Item i) {
         Session s = HibernateUtil.getSessionFactory().openSession();
         s.beginTransaction();
         s.save(i);
         s.getTransaction().commit();
         s.close();
+        return null;
     }
 
     @Override

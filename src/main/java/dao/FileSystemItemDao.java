@@ -1,6 +1,7 @@
 package dao;
 
 import entity.Item;
+import service.ItemServise;
 import spring.SpringContextHolder;
 
 import java.io.*;
@@ -67,7 +68,7 @@ public class FileSystemItemDao implements ItemDao {
     }
 
     @Override
-    public void save(Item item) {
+    public ItemServise save(Item item) {
         File idf = (File) SpringContextHolder.getContext().getBean("id_file");
         File name = (File) SpringContextHolder.getContext().getBean("name_file");
         File desc = (File) SpringContextHolder.getContext().getBean("desc_file");
@@ -120,6 +121,7 @@ public class FileSystemItemDao implements ItemDao {
         }
 
 
+        return null;
     }
 
     @Override
