@@ -1,0 +1,159 @@
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    font: inherit;
+    vertical-align: baseline;
+}
+
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+    display: block;
+}
+
+body {
+    line-height: 1;
+}
+
+ol, ul {
+    list-style: none;
+    text-decoration: none;
+}
+
+blockquote, q {
+    quotes: none;
+}
+
+blockquote:before, blockquote:after,
+q:before, q:after {
+    content: '';
+    content: none;
+}
+
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+
+a {
+    text-decoration: none;
+}
+
+
+body {
+    font-family: 'Raleway', sans-serif;
+}
+
+.logo {
+    width: 100%;
+    background: #000;
+    display: flex;
+    justify-content: center;
+
+}
+
+.img-logo {
+    padding: 5px;
+    max-width: 100%;
+    box-sizing: border-box;
+}
+
+nav {
+    margin: auto;
+    width: 100%;
+    /*    height: 100px;*/
+    text-align: center;
+}
+
+.topnav {
+    background-color: #fff;
+    font-size: 14px;
+    margin-top: 40px;
+}
+
+.topnav a {
+    color: #000;
+    text-align: center;
+    padding: 14px 16px;
+    font-size: 15px;
+}
+
+.topnav a:hover {
+    border-bottom: 2px solid #000000;
+}
+
+.container {
+    width: 60%;
+    margin: auto;
+    margin-top: 50px;
+    margin-bottom: 15px;
+
+}
+
+.slider img {
+    width: 100%;
+    height: auto;
+}
+
+.container-text {
+    width: 100%;
+    margin: auto;
+    background-color: #000000;
+}
+
+.text {
+    padding: 50px 150px 50px 150px;
+    color: white;
+}
+
+.container-form {
+    width: 60%;
+    margin: auto;
+    margin-top: 50px;
+
+}
+
+.container-form form {
+    text-align: center;
+    border: 5px solid black;
+}
+
+.container-form input {
+    margin: 10px 10px 10px 10px;
+}
+
+.item {
+    display: inline-block;
+    width: 25%;
+    height: auto;
+    border: 2px solid black;
+    margin: 10px;
+    text-align: center;
+    padding: 10px;
+}
+
+.item img {
+    width: 100px;
+    height: 100px;
+}
+
+
+.item:hover {
+    -webkit-transform: scale(1.2);
+    -ms-transform: scale(1.2);
+    transform: scale(1.2);
+}
