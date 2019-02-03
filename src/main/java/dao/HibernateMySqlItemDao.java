@@ -3,9 +3,11 @@ package dao;
 import entity.Item;
 import hibernate.HibernateUtil;
 import org.hibernate.Session;
+import org.springframework.stereotype.Component;
 
 import java.util.List;
 
+@Component
 public class HibernateMySqlItemDao implements ItemDao {
     @Override
     public List<Item> get() {
