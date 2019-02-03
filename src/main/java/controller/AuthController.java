@@ -31,9 +31,11 @@ public class AuthController {
     @PostMapping
     public void authenticate(HttpServletRequest request,
                              HttpServletResponse response,
-                             @RequestParam String login) throws IOException {
-        if (authService.isAuthenticated(login)) {
+                             @RequestParam String login,
+                             @RequestParam String pass) throws IOException {
+        if (authService.isAuthenticated(login, pass)) {
             request.getSession().setAttribute("login", login);
+            request.getSession().setAttribute("pass", pass);
             response.sendRedirect("/loginer/main");
         } else {
             response.sendRedirect("/loginer/");
