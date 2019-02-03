@@ -16,7 +16,7 @@ public class ItemsHolder {
 //                public void run() {
 
 
-//        items = new ConcurrentHashMap<>();
+        items = new ConcurrentHashMap<>();
 //        Для доступа из MySql
 //        for (Item i : new MySqlItemDao().get()) {
 //            Для доступа из файлов
