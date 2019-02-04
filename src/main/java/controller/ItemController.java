@@ -1,3 +1,5 @@
+package controller;
+
 import entity.Item;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -26,4 +28,4 @@ public class ItemController {
         model.addObject("items", items);
         return model;
     }
-    }
+}

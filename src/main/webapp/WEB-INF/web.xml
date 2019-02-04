@@ -16,14 +16,14 @@
     </servlet-mapping>
 
 
-    <servlet>
-        <servlet-name>ItemServlet</servlet-name>
-        <servlet-class>servlet.ItemServlet</servlet-class>
-    </servlet>
-    <servlet-mapping>
-        <servlet-name>ItemServlet</servlet-name>
-        <url-pattern>/item</url-pattern>
-    </servlet-mapping>
+    <!--<servlet>-->
+    <!--<servlet-name>ItemServlet</servlet-name>-->
+    <!--<servlet-class>servlet.ItemServlet</servlet-class>-->
+    <!--</servlet>-->
+    <!--<servlet-mapping>-->
+    <!--<servlet-name>ItemServlet</servlet-name>-->
+    <!--<url-pattern>/item</url-pattern>-->
+    <!--</servlet-mapping>-->
     <servlet>
         <servlet-name>AddServlet</servlet-name>
         <servlet-class>servlet.AddServlet</servlet-class>
