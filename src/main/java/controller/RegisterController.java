@@ -34,9 +34,6 @@ public class RegisterController {
                              @RequestParam String login,
                              @RequestParam String pass,
                              @RequestParam String passConfirm) throws IOException {
-        request.getSession().setAttribute("login", login);
-        request.getSession().setAttribute("pass", pass);
-        request.getSession().setAttribute("passConfirm", passConfirm);
         if (registerService.correctInput(login, pass, passConfirm)) {
             if (registerService.loginExtends(login)) {
 //            System.out.println("User is exist  "+((HibernateMySqlUserDao) SpringContextHolder.getContext().getBean("user_dao")).getByLogin(login));
