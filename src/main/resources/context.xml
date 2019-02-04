@@ -5,19 +5,19 @@
         http://www.springframework.org/schema/beans/spring-beans-4.1.xsd">
 
     <bean id="id_file" class="java.io.File" scope="prototype">
-        <constructor-arg value="C:\Users\Lenovo\IdeaProjects\LoginerNew\id.dat"/>
+        <constructor-arg value="E:\IdeaProjects\GitHub\Loginer\id.dat"/>
     </bean>
     <bean id="name_file" class="java.io.File" scope="prototype">
-        <constructor-arg value="C:\Users\Lenovo\IdeaProjects\LoginerNew\name.dat"/>
+        <constructor-arg value="E:\IdeaProjects\GitHub\Loginer\name.dat"/>
     </bean>
     <bean id="desc_file" class="java.io.File" scope="prototype">
-        <constructor-arg value="C:\Users\Lenovo\IdeaProjects\LoginerNew\description.dat"/>
+        <constructor-arg value="E:\IdeaProjects\GitHub\Loginer\description.dat"/>
     </bean>
     <bean id="pic_file" class="java.io.File" scope="prototype">
-        <constructor-arg value="C:\Users\Lenovo\IdeaProjects\LoginerNew\pic.dat"/>
+        <constructor-arg value="E:\IdeaProjects\GitHub\Loginer\pic.dat"/>
     </bean>
     <bean id="price_file" class="java.io.File" scope="prototype">
-        <constructor-arg value="C:\Users\Lenovo\IdeaProjects\LoginerNew\price.dat"/>
+        <constructor-arg value="E:\IdeaProjects\GitHub\Loginer\price.dat"/>
     </bean>
 
     <bean id="idao" class="dao.HibernateMySqlItemDao"/>
