@@ -24,14 +24,14 @@
     <!--<servlet-name>ItemServlet</servlet-name>-->
     <!--<url-pattern>/item</url-pattern>-->
     <!--</servlet-mapping>-->
-    <servlet>
-        <servlet-name>AddServlet</servlet-name>
-        <servlet-class>servlet.AddServlet</servlet-class>
-    </servlet>
-    <servlet-mapping>
-        <servlet-name>AddServlet</servlet-name>
-        <url-pattern>/add</url-pattern>
-    </servlet-mapping>
+    <!--<servlet>-->
+    <!--<servlet-name>AddServlet</servlet-name>-->
+    <!--<servlet-class>servlet.AddServlet</servlet-class>-->
+    <!--</servlet>-->
+    <!--<servlet-mapping>-->
+    <!--<servlet-name>AddServlet</servlet-name>-->
+    <!--<url-pattern>/add</url-pattern>-->
+    <!--</servlet-mapping>-->
     <!--<servlet>-->
     <!--<servlet-name>AuthServlet</servlet-name>-->
     <!--<servlet-class>servlet.AuthServlet</servlet-class>-->
