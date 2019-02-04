@@ -5,17 +5,19 @@ import entity.Item;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.Collection;
+
 @Service
-public class ItService {
+public class SearchService {
     private final ItemDao itemDao;
 
     @Autowired
-    public ItService(ItemDao itemDao) {
+    public SearchService(ItemDao itemDao) {
         this.itemDao = itemDao;
     }
 
-
-    public Item getById(String id) {
-        return itemDao.getById(id);
+    public Collection<Item> getSomeItems(String name) {
+        return itemDao.getByName(name);
     }
+
 }
