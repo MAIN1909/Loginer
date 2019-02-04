@@ -1,46 +1,29 @@
-package servlet;
-
-import dao.ItemDao;
 import entity.Item;
-import service.ItemServise;
-import spring.SpringContextHolder;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.servlet.ModelAndView;
+import service.ItService;
 
-import javax.servlet.http.HttpServlet;
-import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
-import java.io.IOException;
-import java.io.PrintWriter;
 
-//@WebServlet(name = "ItemServlet", urlPatterns = "/item")
-public class ItemServlet extends HttpServlet {
-    protected void doPost(HttpServletRequest request, HttpServletResponse response) {
+@Controller
+@RequestMapping("/item")
+public class ItemController {
+    @Autowired
+    private final ItService itService;
 
+    public ItemController(ItService itService) {
+        this.itService = itService;
     }
 
-    protected void doGet(HttpServletRequest request, HttpServletResponse response) throws IOException {
-        response.setContentType("text/html");
-        response.setCharacterEncoding("UTF-8");
-        String id = request.getParameter("id");
-//Для MySql
-//        Item itemById = new MySqlItemDao().getById(id);
-//Для Hibernate
-        Item itemById = ((ItemDao) SpringContextHolder.getContext().getBean("idao")).getById(id);
+    @GetMapping
+    public ModelAndView item(@RequestParam String id) {
 
-        PrintWriter out = response.getWriter();
-        out.println(((ItemServise) SpringContextHolder.getContext().getBean("html_item")).formItemPage(itemById));
-        out.close();
-//        Item itemById = null;
-//        for (Item i : new MySqlItemDao().get()) {
-//            if (id.equals(i.getId().toString())) {
-//                itemById = i;
-//            }
-//        }
-//        try {
-//            PrintWriter out = response.getWriter();
-//            out.println(HtmlServise.formItemPage("Товар",itemById));
-//            out.close();
-//        } catch (Exception e) {
-//            e.printStackTrace();
-//        }
+        ModelAndView model = new ModelAndView("item");
+        Item items = itService.getById(id);
+        model.addObject("items", items);
+        return model;
     }
-}
+    }

@@ -8,7 +8,7 @@ import java.util.LinkedList;
 import java.util.List;
 import java.util.UUID;
 
-public class FileSystemItemDao implements ItemDao {
+public class FileSystemItemDao implements dao.ItemDao {
 
     @Override
     public List<Item> get() {
